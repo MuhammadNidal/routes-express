@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 // GET: Retrieve a book by id
 app.get('/books/:id', (req, res) => {
     const bookId = parseInt(req.params.id);
-    
+
     const book = books.find(b => b.id === bookId);
     if (book) {
         res.status(200).json({
@@ -41,6 +41,7 @@ app.get('/books/:id', (req, res) => {
 
 // POST: Create a new book
 app.post('/books', (req, res) => {
+    
     const newBook = {
         id: books.length + 1,
         title: req.body.title,
