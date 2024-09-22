@@ -9,13 +9,15 @@ app.use(express.json());
 let books = [
 
     { id: 1, title: 'The Great Gatsby', author: 'F. Scott Fitzgerald' },
+
     { id: 2, title: 'To Kill a Mockingbird', author: 'Harper Lee' }
-    
+
 ];
 
 // GET: Retrieve all books
 app.get('/', (req, res) => {
     res.status(200).json({
+        
         message: 'Books retrieved successfully',
         data: books
     });
