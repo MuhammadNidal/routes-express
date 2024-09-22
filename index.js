@@ -31,6 +31,7 @@ app.get('/books/:id', (req, res) => {
     const book = books.find(b => b.id === bookId);
     if (book) {
         res.status(200).json({
+            
             message: 'Book retrieved successfully',
             data: book
         });
@@ -61,7 +62,7 @@ app.put('/books/:id', (req, res) => {
     const bookIndex = books.findIndex(b => b.id === bookId);
 
     if (bookIndex !== -1) {
-        
+
         books[bookIndex].title = req.body.title;
 
         books[bookIndex].author = reputq.body.author;
