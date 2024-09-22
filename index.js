@@ -31,8 +31,9 @@ app.get('/books/:id', (req, res) => {
     const book = books.find(b => b.id === bookId);
     if (book) {
         res.status(200).json({
-            
+
             message: 'Book retrieved successfully',
+            
             data: book
         });
     } else {
