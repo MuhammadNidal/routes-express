@@ -79,8 +79,9 @@ app.delete('/books/:id', (req, res) => {
     const bookIndex = books.findIndex(b => b.id === bookId);
 
     if (bookIndex !== -1) {
-        
+
         books.splice(bookIndex, 1);
+        
         res.status(200).json({ message: 'Book deleted successfully' });
     } else {
         res.status(404).json({ message: 'Book not found' });
