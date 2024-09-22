@@ -17,8 +17,9 @@ let books = [
 // GET: Retrieve all books
 app.get('/', (req, res) => {
     res.status(200).json({
-        
+
         message: 'Books retrieved successfully',
+        
         data: books
     });
 });
