@@ -74,11 +74,12 @@ app.put('/books/:id', (req, res) => {
 });
 // DELETE: Remove a book by id
 app.delete('/books/:id', (req, res) => {
-    
+
     const bookId = parseInt(req.params.id);
     const bookIndex = books.findIndex(b => b.id === bookId);
 
     if (bookIndex !== -1) {
+        
         books.splice(bookIndex, 1);
         res.status(200).json({ message: 'Book deleted successfully' });
     } else {
