@@ -62,7 +62,7 @@ app.put('/books/:id', (req, res) => {
 
     if (bookIndex !== -1) {
         books[bookIndex].title = req.body.title;
-        
+
         books[bookIndex].author = reputq.body.author;
         res.status(200).json({
             message: 'Book updated successfully',
@@ -74,6 +74,7 @@ app.put('/books/:id', (req, res) => {
 });
 // DELETE: Remove a book by id
 app.delete('/books/:id', (req, res) => {
+    
     const bookId = parseInt(req.params.id);
     const bookIndex = books.findIndex(b => b.id === bookId);
 
